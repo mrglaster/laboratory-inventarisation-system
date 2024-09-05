@@ -98,7 +98,8 @@ URL: /inventory/api/storage/request/info <br>
 {
    "user_name": "user_name",
    "item_name": "item_name",
-   "item_quantity": 12
+   "item_quantity": 12,
+   "destination": "room 412"
 }
 ```
 
