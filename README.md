@@ -79,6 +79,30 @@ URL: /inventory/api/storage/return <br>
 }
 ```
 
+### Получить информацию о запросе 
+
+Тип запроса: POST <br> 
+URL: /inventory/api/storage/request/info <br>
+Роль: ROLE_LABORANT <br>
+Тело:  <br>
+
+```
+{
+  "request_id": "request_id" 
+}
+```
+
+Ответ: 
+
+```
+{
+   "user_name": "user_name",
+   "item_name": "item_name",
+   "item_quantity": 12
+}
+```
+
+
 ### Список взятого данным пользователем
 
 Тип запроса: POST <br>
