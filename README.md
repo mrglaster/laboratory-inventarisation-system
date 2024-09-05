@@ -4,10 +4,10 @@
 
 ### Регистрация пользователя
 
-Тип запроса: POST 
-URL: /inventory/api/users/register
-Роль: NONE
-Тело запроса: 
+Тип запроса: POST <br>
+URL: /inventory/api/users/register <br>
+Роль: NONE <br>
+Тело запроса: <br>
 
 ```
 {
@@ -18,7 +18,7 @@ URL: /inventory/api/users/register
 }
 ```
 
-Ответ: 
+Ответ: <br>
 ```
 {
   "status": "ok",
@@ -27,23 +27,26 @@ URL: /inventory/api/users/register
 ```
 
 ### Авторизация пользователя 
-Тип запроса: POST 
-URL: /inventory/api/users/auth/login
-Роль: NONE 
-Тело: 
+Тип запроса: POST <br>
+URL: /inventory/api/users/auth/login <br>
+Роль: NONE <br>
+Тело: <br>
+
+```
 {
   "login": "login",
   "password": "password" 
 }
+```
 
 ## Взятие и сдача инвентаря 
 
 ### Взятие инвентаря 
 
-Тип запроса: POST 
-URL: /inventory/api/storage/loan
-Роль: ROLE_STUDENT
-Тело: 
+Тип запроса: POST <br>
+URL: /inventory/api/storage/loan <br>
+Роль: ROLE_STUDENT <br>
+Тело:  <br>
 
 ```
 {
@@ -63,10 +66,10 @@ URL: /inventory/api/storage/loan
 
 ### Сдача инвентаря 
 
-Тип запроса: POST 
-URL: /inventory/api/storage/return
-Роль: ROLE_LABORANT
-Тело: 
+Тип запроса: POST <br> 
+URL: /inventory/api/storage/return <br>
+Роль: ROLE_LABORANT <br>
+Тело:  <br>
 
 ```
 {
@@ -76,12 +79,12 @@ URL: /inventory/api/storage/return
 }
 ```
 
-### Список взятого пользователем
+### Список взятого данным пользователем
 
-Тип запроса: POST 
-URL: /inventory/api/storage/history/user 
-Роль: ROLE_STUDENT 
-Тело: 
+Тип запроса: POST <br>
+URL: /inventory/api/storage/history/user <br>
+Роль: ROLE_STUDENT <br>
+Тело: <br>
 
 ```
 Тело отсутствует, используем данные из bearer token
@@ -107,18 +110,51 @@ URL: /inventory/api/storage/history/user
 ```
 
 
+### Список взятого конкретным пользователем
+
+Тип запроса: POST <br>
+URL: /inventory/api/storage/history/user/specific <br>
+Роль: ROLE_LABORANT <br>
+Тело: <br>
+
+```
+{
+    "user_id": "user_id
+}
+```
+
+Ответ: <br>
+
+```
+{
+  "items": [
+    {
+      "request_id": "request_id",
+      "item_name": "item name",
+      "item_quantity": 28,
+      "returned": true,
+      "loan_date": "DATETIME",
+      "return_date": "DATETIME",
+      "item_picture": "PICTURE_URL"
+    }
+  ]
+...
+}
+```
+
+
 ### Список взятого за все время
 
-Тип запроса: POST 
-URL: /inventory/api/storage/history/all 
-Роль: ROLE_LABORANT
-Тело: 
+Тип запроса: POST <br>
+URL: /inventory/api/storage/history/all <br>
+Роль: ROLE_LABORANT <br>
+Тело: <br>
 
 ```
 Тело отсутствует, используем данные из bearer token
 ```
 
-Ответ: 
+Ответ: <br>
 
 ```
 {
@@ -141,10 +177,10 @@ URL: /inventory/api/storage/history/all
 
 ### Добавить существующее оборудование 
 
-Тип запроса: POST 
-URL: /inventory/api/storage/add
-Роль: ROLE_LABORANT 
-Тело:  
+Тип запроса: POST <br>
+URL: /inventory/api/storage/add <br>
+Роль: ROLE_LABORANT  <br>
+Тело:  <br>
 
 ```
 {
@@ -156,10 +192,10 @@ URL: /inventory/api/storage/add
 
 ### Зарегистрировать новое оборудование 
 
-Тип запроса: POST 
-URL: /inventory/api/storage/register 
-Роль: ROLE_LABORANT 
-Тело: 
+Тип запроса: POST <br>
+URL: /inventory/api/storage/register <br>
+Роль: ROLE_LABORANT <br>
+Тело: <br>
 
 ```
 {
@@ -171,10 +207,10 @@ URL: /inventory/api/storage/register
 
 ### Получить список существующих вещей 
 
-Тип запроса: GET 
-URL: /inventory/api/storage/names/list 
-Роль: ROLE_STUDENT 
-Ответ: 
+Тип запроса: GET <br>
+URL: /inventory/api/storage/names/list <br>
+Роль: ROLE_STUDENT <br>
+Ответ: <br>
 
 ```
   {
@@ -191,10 +227,10 @@ URL: /inventory/api/storage/names/list
 
 ### Получить список должников 
 
-Тип запроса: GET 
-URL: /inventory/api/storage/debtors 
-Роль: ROLE_LABORANT
-Ответ: 
+Тип запроса: GET <br> 
+URL: /inventory/api/storage/debtors <br>
+Роль: ROLE_LABORANT <br>
+Ответ: <br>
 
 ```
 {
@@ -212,10 +248,10 @@ URL: /inventory/api/storage/debtors
 
 ### Получить список закончившегося оборудования 
 
-Тип запроса: GET 
-URL: /inverntory/api/storage/outofstock
-Роль: ROLE_LABORANT 
-Ответ: 
+Тип запроса: GET <br>
+URL: /inverntory/api/storage/outofstock <br>
+Роль: ROLE_LABORANT <br>
+Ответ: <br>
 
 ```
 {
@@ -230,11 +266,11 @@ URL: /inverntory/api/storage/outofstock
 ```
 
 ### Получить историю взятия конкретного оборудования 
-Тип запроса: GET 
-URL: /inventory/api/storage/history 
-Роль: ROLE_LABORANT 
-
-Тело: 
+Тип запроса: GET <br>
+URL: /inventory/api/storage/history <br>
+Роль: ROLE_LABORANT <br>
+<br>
+Тело: <br>
 
 ```
 {
@@ -244,7 +280,7 @@ URL: /inventory/api/storage/history
 ```
 
 
-Ответ: 
+Ответ: <br>
 
 ```
 {
