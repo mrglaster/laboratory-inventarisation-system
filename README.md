@@ -225,6 +225,7 @@ URL: /inventory/api/storage/register <br>
 ```
 {
    "item_name": "item_name",
+   "category": "category_name"
    "cover_b64": "cover in base64 format
 }
 ```
